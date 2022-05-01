@@ -1,0 +1,148 @@
+#description-section {
+  width: 100%;
+  height: 50vh;
+  margin-top: 15vh;
+  padding: 0 7.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.5em;
+  font-weight: 300;
+  text-align: center;
+  overflow: hidden;
+}
+
+.descShows {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+.neon-blue-active:hover {
+  color: #099fff;
+}
+
+.neon-pink-active:hover {
+  color: #ff0099;
+}
+
+.neon-yellow-active:hover {
+  color: #f2ea02;
+}
+
+.neon-yellow-active,
+.neon-pink-active,
+.neon-blue-active {
+  transition: all 0.3s ease-out;
+}
+
+.stay-blue {
+  animation: stay-blue;
+  animation-duration: 5s;
+  transition: all 0.2s;
+}
+
+.stay-pink {
+  animation: stay-pink;
+  animation-duration: 5s;
+  transition: all 0.2s;
+}
+
+.stay-yellow {
+  animation: stay-yellow;
+  animation-duration: 5s;
+  transition: all 0.2s;
+}
+
+@keyframes stay-blue {
+  0% {
+    color: #099fff;
+  }
+  80% {
+    color: #099fff;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes stay-pink {
+  0% {
+    color: #ff0099;
+  }
+  80% {
+    color: #ff0099;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes stay-yellow {
+  0% {
+    color: #f2ea02;
+  }
+  80% {
+    color: #f2ea02;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.center-div {
+  text-align: center;
+}
+
+#stack {
+  align-items: center;
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 10vh;
+}
+
+#top-button,
+#portfolio-link {
+  color: white;
+  text-decoration: none !important;
+  display: inline-block;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5em;
+}
+
+#top-button {
+  top: 3%;
+}
+
+#top-button:hover {
+  color: #099fff;
+}
+
+#portfolio-link:hover {
+  color: #ff0099;
+}
+
+@media screen and (max-width: 1025px) {
+  #description-section {
+    font-size: 3.5em;
+    height: auto;
+    margin-top: 15vh;
+  }
+
+  #stack {
+    font-size: 3.5em;
+    margin: 10vh 0 10vh 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #description-section {
+    font-size: 2em;
+    height: auto;
+    margin-top: 15vh;
+  }
+
+  #stack {
+    font-size: 2em;
+  }
+}
