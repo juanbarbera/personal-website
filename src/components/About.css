@@ -1,6 +1,17 @@
+#welcome-section {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: 300;
+  margin-top: 10vh;
+  cursor: default;
+}
+
 #description-section {
   width: 100%;
-  height: 50vh;
+  height: 100vh;
   margin-top: 15vh;
   padding: 0 7.5vw;
   display: flex;
@@ -11,6 +22,7 @@
   font-weight: 300;
   text-align: center;
   overflow: hidden;
+  cursor: default;
 }
 
 .descShows {
@@ -33,13 +45,13 @@
 .neon-yellow-active,
 .neon-pink-active,
 .neon-blue-active {
-  transition: all 0.3s ease-out;
+  transition: animation 0.3s ease-out;
 }
 
-.stay-blue {
+.from-blue-to-black {
   animation: stay-blue;
   animation-duration: 5s;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 
 .stay-pink {
@@ -58,7 +70,7 @@
   0% {
     color: #099fff;
   }
-  80% {
+  50% {
     color: #099fff;
   }
   100% {
@@ -70,7 +82,7 @@
   0% {
     color: #ff0099;
   }
-  80% {
+  50% {
     color: #ff0099;
   }
   100% {
@@ -82,7 +94,7 @@
   0% {
     color: #f2ea02;
   }
-  80% {
+  50% {
     color: #f2ea02;
   }
   100% {
@@ -95,10 +107,12 @@
 }
 
 #stack {
+  height: 100vh;
   align-items: center;
   text-align: center;
   font-size: 2.5em;
   margin-top: 10vh;
+  cursor: default;
 }
 
 #top-button,
@@ -135,7 +149,7 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 821px) {
   #description-section {
     font-size: 2em;
     height: auto;
@@ -144,5 +158,6 @@
 
   #stack {
     font-size: 2em;
+    height: auto;
   }
 }

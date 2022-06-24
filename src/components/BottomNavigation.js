@@ -48,8 +48,8 @@ const RightButtom = styled(Button)`
 export const BottomNavigation = () => {
   return (
     <Background>
-      <LeftButtom href="/"><FingerprintIcon />Portfolio</LeftButtom>
-      <RightButtom href="/about"><EmojiPeopleIcon />About Me</RightButtom>
+      <LeftButtom href="/portfolio"><FingerprintIcon />Portfolio</LeftButtom>
+      <RightButtom href="/"><EmojiPeopleIcon />About Me</RightButtom>
     </Background>
   )
 }

@@ -90,7 +90,7 @@ export const TopNavigation = () => {
     <Background>
       <NavigationWrapper>
         <Icon>
-          <NavLink to="/" color="#ff0099">Portfolio</NavLink>
+          <NavLink to="/portfolio" color="#ff0099">Portfolio</NavLink>
         </Icon>
           <NavLink to="/" color="white">
             <Logo>
@@ -103,7 +103,7 @@ export const TopNavigation = () => {
             </Logo>
           </NavLink>
         <Icon>
-          <NavLink to="/about" color="#099fff">About Me</NavLink>
+          <NavLink to="/" color="#099fff">About Me</NavLink>
         </Icon>
       </NavigationWrapper>
     </Background>
