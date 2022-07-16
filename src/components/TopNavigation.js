@@ -10,9 +10,11 @@ const Background = styled.div`
   left: 0;
   display: flex;
   justify-content: center;
+  z-index: 1;
   @media (max-width: 1025px) {
     position: absolute;
     padding: 5vh 0;
+    height: 15vh;
   }
 `;
 
@@ -90,7 +92,8 @@ export const TopNavigation = () => {
     <Background>
       <NavigationWrapper>
         <Icon>
-          <NavLink to="/portfolio" color="#ff0099">Portfolio</NavLink>
+          <NavLink to="/" color="#099fff">About Me</NavLink>
+          
         </Icon>
           <NavLink to="/" color="white">
             <Logo>
@@ -103,7 +106,7 @@ export const TopNavigation = () => {
             </Logo>
           </NavLink>
         <Icon>
-          <NavLink to="/" color="#099fff">About Me</NavLink>
+          <NavLink to="/portfolio" color="#ff0099">Portfolio</NavLink>
         </Icon>
       </NavigationWrapper>
     </Background>

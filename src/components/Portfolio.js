@@ -4,11 +4,13 @@ import { TopNavigation } from './TopNavigation';
 import { BottomNavigation } from './BottomNavigation';
 import Button from '@mui/material/Button';
 
-import apiRedux from '../assets/images/api-redux.jpg';
-import garra from '../assets/images/garra.jpg';
-import plateletCalc from '../assets/images/plateletCalc.jpg';
-import robots from '../assets/images/robot-store-print.jpg';
-import plateletCalcReact from '../assets/images/platelet-calc-react.jpg';
+import tmc from '../assets/images/tmc.webp';
+import apiRedux from '../assets/images/api-redux.webp';
+import garra from '../assets/images/garra.webp';
+import plateletCalc from '../assets/images/plateletCalc.webp';
+import robots from '../assets/images/robot-store-print.webp';
+import plateletCalcReact from '../assets/images/platelet-calc-react.webp';
+import solarSystem from '../assets/images/solar-system.webp';
 
 const Background = styled.section`
   background-color: white;
@@ -23,7 +25,7 @@ const Container = styled.div`
 
 const PortfolioSection = styled.section`
   width: 100%;
-  margin-top: 12vh;
+  margin-top: 17vh;
   @media (min-width: 821px) {
     margin-top: 10vh;
     height: 90vh;
@@ -97,6 +99,7 @@ const ProjectButton = styled(Button)`
     cursor: pointer;
     background-color: black;
     color: white;
+    z-index: 0;
     :hover {
       font-size: 1.3em;
       background-color: black;
@@ -114,10 +117,10 @@ const ModalBackground = styled.div`
   z-index: 1;
   left: 0;
   top: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
   overflow: auto;
-  background-color: rgba(0,0,0,0.5); 
 `;
 
 const ModalBody = styled.div`
@@ -128,12 +131,16 @@ const ModalBody = styled.div`
   display: flex;
   flex-direction: column;
   background-color: white;
-  @media (min-width: 1250px) {
-    width: 60vw;
-    margin: 10vh 20vw 10vh 20vw;
+  @media (min-width: 1025px) {
+    width: 53vw;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    margin: 10vh auto 10vh;
   }
   @media (min-width: 1500px) {
     width: 50vw;
+    height: 80vh;
     margin: 10vh 25vw 10vh 25vw;
   }
 `;
@@ -184,6 +191,7 @@ const ModalDescriptionAndLink = styled.div`
 
 const ModalDescription = styled.div`
   margin: 15% 0 10% 0;
+  padding: 0 4%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +207,7 @@ const ModalButtons = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  @media (min-width: 1250px) {
+  @media (min-width: 1150px) {
     flex-direction: row;
   }
 `;
@@ -217,12 +225,14 @@ const ModalButton = styled(Button)`
       color: white;
     }
     @media (min-width: 1025px) {
-      width: 200px;
+      width: 150px;
     }
   }
 `;
 
 export const Portfolio = () => {
+  const [tmcShouldShow, setTmcShouldShow] = useState(false);
+  const [solarSystemShouldShow, setSolarSystemShouldShow] = useState(false);
   const [plateletReactShouldShow, setPlateletReactShouldShow] = useState(false);
   const [robotModalShouldShow, setRobotModalShouldShow] = useState(false);
   const [apiReduxModalShouldShow, setApiReduxModalShouldShow] = useState(false);
@@ -238,33 +248,85 @@ export const Portfolio = () => {
       <PortfolioSection>
         <Grid>
           <Project>
+            <ProjectTitle>TMC Clone - React</ProjectTitle>
+            <ProjectImage src={tmc} />
+            <ProjectButton onClick={() => setTmcShouldShow(!tmcShouldShow)}>discover</ProjectButton>
+          </Project>
+          <Project>
+            <ProjectTitle>Solar System - HTML & CSS</ProjectTitle>
+            <ProjectImage src={solarSystem} />
+            <ProjectButton onClick={() => setSolarSystemShouldShow(!solarSystemShouldShow)}>discover</ProjectButton>
+          </Project>
+          <Project>
             <ProjectTitle>Platelet Calculator - React</ProjectTitle>
             <ProjectImage src={plateletCalcReact} />
             <ProjectButton onClick={() => setPlateletReactShouldShow(!plateletReactShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
-            <ProjectTitle>Luxembourg Robots</ProjectTitle>
+            <ProjectTitle>Luxembourg Robots - MERN</ProjectTitle>
             <ProjectImage src={robots} />
             <ProjectButton onClick={() => setRobotModalShouldShow(!robotModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
-            <ProjectTitle>API with React/Redux</ProjectTitle>
+            <ProjectTitle>API Practice - React & Redux</ProjectTitle>
             <ProjectImage src={apiRedux} />
             <ProjectButton onClick={() => setApiReduxModalShouldShow(!apiReduxModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
-            <ProjectTitle>Garra Website</ProjectTitle>
+            <ProjectTitle>Garra Website - HTML & CSS</ProjectTitle>
             <ProjectImage src={garra} />
             <ProjectButton onClick={() => setGarraModalShouldShow(!garraModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
-            <ProjectTitle>Platelet Calculator</ProjectTitle>
+            <ProjectTitle>Platelet Calculator - HTML, CSS & JavaScript</ProjectTitle>
             <ProjectImage src={plateletCalc} />
             <ProjectButton onClick={() => setPlateletModalShouldShow(!garraModalShouldShow)}>discover</ProjectButton>
           </Project>
         </Grid>
       </PortfolioSection>
     </Container>
+
+    <ModalBackground open={tmcShouldShow} onClick={() => setTmcShouldShow(false)}>
+      <ModalBody onClick={e => e.stopPropagation()}>
+        <ModalTitle>Solar System - HTML & CSS</ModalTitle>
+        <ModalImageAndDescription> 
+          <Centralizer>
+            <ModalImage src={tmc}/>
+          </Centralizer> 
+          <ModalDescriptionAndLink>
+            <ModalDescription>
+            Practice clone in which I applied techniques from the course React: Design Patterns. This app contains the following techniques: split-screen, modal, and list components.
+            </ModalDescription> 
+          </ModalDescriptionAndLink>
+        </ModalImageAndDescription>
+        <ModalButtons>
+          <ModalButton fontcolor="#ff0099" onClick={() => setTmcShouldShow(false)}>Close</ModalButton>
+          <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/tmc-clone" target="_blank">Repository</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://tmc-clone.vercel.app/" target="_blank">Visit</ModalButton>
+        </ModalButtons>
+      </ModalBody>
+    </ModalBackground>
+
+    <ModalBackground open={solarSystemShouldShow} onClick={() => setSolarSystemShouldShow(false)}>
+      <ModalBody onClick={e => e.stopPropagation()}>
+        <ModalTitle>Solar System - HTML & CSS</ModalTitle>
+        <ModalImageAndDescription> 
+          <Centralizer>
+            <ModalImage src={solarSystem}/>
+          </Centralizer> 
+          <ModalDescriptionAndLink>
+            <ModalDescription>
+              Virtual representation of our solar system with some respect to all scales. Planet images were taken from Google images and edited on photopea.
+            </ModalDescription> 
+          </ModalDescriptionAndLink>
+        </ModalImageAndDescription>
+        <ModalButtons>
+          <ModalButton fontcolor="#ff0099" onClick={() => setSolarSystemShouldShow(false)}>Close</ModalButton>
+          <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/our-solar-system" target="_blank">Repository</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://juanbarbera.github.io/our-solar-system/" target="_blank">Visit</ModalButton>
+        </ModalButtons>
+      </ModalBody>
+    </ModalBackground>
 
     <ModalBackground open={plateletReactShouldShow} onClick={() => setPlateletReactShouldShow(false)}>
       <ModalBody onClick={e => e.stopPropagation()}>
@@ -281,8 +343,8 @@ export const Portfolio = () => {
         </ModalImageAndDescription>
         <ModalButtons>
           <ModalButton fontcolor="#ff0099" onClick={() => setPlateletReactShouldShow(false)}>Close</ModalButton>
-          <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/robots-store" target="_blank">Repository</ModalButton>
-          <ModalButton fontcolor="#099fff" href="https://robot-store.herokuapp.com/" target="_blank">Open App</ModalButton>
+          <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/platelet-calculator-react" target="_blank">Repository</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://plateletreact.vercel.app/" target="_blank">Visit</ModalButton>
         </ModalButtons>
       </ModalBody>
     </ModalBackground>
@@ -303,7 +365,7 @@ export const Portfolio = () => {
         <ModalButtons>
           <ModalButton fontcolor="#ff0099" onClick={() => setRobotModalShouldShow(false)}>Close</ModalButton>
           <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/robots-store" target="_blank">Repository</ModalButton>
-          <ModalButton fontcolor="#099fff" href="https://robot-store.herokuapp.com/" target="_blank">Open App</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://robot-store.herokuapp.com/" target="_blank">Visit</ModalButton>
         </ModalButtons>
       </ModalBody>
     </ModalBackground>
@@ -324,7 +386,7 @@ export const Portfolio = () => {
         <ModalButtons>
           <ModalButton fontcolor="#ff0099" onClick={() => setApiReduxModalShouldShow(false)}>Close</ModalButton>
           <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/apiredux/tree/master" target="_blank">Repository</ModalButton>
-          <ModalButton fontcolor="#099fff" href="https://api-react-eight.vercel.app/" target="_blank">Open App</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://api-react-eight.vercel.app/" target="_blank">Visit</ModalButton>
         </ModalButtons>
       </ModalBody>
     </ModalBackground>
@@ -345,7 +407,7 @@ export const Portfolio = () => {
         <ModalButtons>
           <ModalButton fontcolor="#ff0099" onClick={() => setGarraModalShouldShow(false)}>Close</ModalButton>
           <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/garra.tv" target="_blank">Repository</ModalButton>
-          <ModalButton fontcolor="#099fff" href="https://juanbarbera.github.io/garra.tv/" target="_blank">Open App</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://juanbarbera.github.io/garra.tv/" target="_blank">Visit</ModalButton>
         </ModalButtons>
       </ModalBody>
     </ModalBackground>
@@ -366,7 +428,7 @@ export const Portfolio = () => {
         <ModalButtons>
           <ModalButton fontcolor="#ff0099" onClick={() => setPlateletModalShouldShow(false)}>Close</ModalButton>
           <ModalButton repository={true} fontcolor="#099fff" href="https://github.com/juanbarbera/platelet-calculator" target="_blank">Repository</ModalButton>
-          <ModalButton fontcolor="#099fff" href="https://juanbarbera.github.io/platelet-calculator/index.html" target="_blank">Open App</ModalButton>
+          <ModalButton fontcolor="#099fff" href="https://juanbarbera.github.io/platelet-calculator/index.html" target="_blank">Visit</ModalButton>
         </ModalButtons>
       </ModalBody>
     </ModalBackground>
