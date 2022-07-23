@@ -1,19 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { TopNavigation } from './TopNavigation';
 import { BottomNavigation } from './BottomNavigation';
 import Button from '@mui/material/Button';
 
 import tmc from '../assets/images/tmc.webp';
+import solarSystem from '../assets/images/solar-system.webp';
+import plateletCalcReact from '../assets/images/platelet-calc-react.webp';
+import robots from '../assets/images/robot-store-print.webp';
 import apiRedux from '../assets/images/api-redux.webp';
 import garra from '../assets/images/garra.webp';
 import plateletCalc from '../assets/images/plateletCalc.webp';
-import robots from '../assets/images/robot-store-print.webp';
-import plateletCalcReact from '../assets/images/platelet-calc-react.webp';
-import solarSystem from '../assets/images/solar-system.webp';
+
+import tmcPlaceholder from '../assets/images/tmc-placeholder.webp';
+import solarSystemPlaceholder from '../assets/images/solar-system-placeholder.webp';
+import plateletCalcReactPlaceholder from '../assets/images/platelet-calc-react-placeholder.webp';
+import robotsPlaceholder from '../assets/images/robot-store-placeholder.webp';
+import apiReduxPlaceholder from '../assets/images/api-redux-placeholder.webp';
+import garraPlaceholder from '../assets/images/garra-placeholder.webp';
+import plateletCalcPlaceholder from '../assets/images/plateletCalc-placeholder.webp';
 
 const Background = styled.section`
   background-color: white;
+
+  
+  font-family: "Bebas Neue", sans-serif;
   @media (max-width: 1025px) {
     padding-bottom: 12vh;
   }
@@ -196,6 +207,7 @@ const ModalDescription = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
+  font-family: "Dosis", sans-serif;
   @media (min-width: 1025px) {
     margin: 4% 0 3% 0;
   }
@@ -230,6 +242,18 @@ const ModalButton = styled(Button)`
   }
 `;
 
+const useProgressiveImage = src => {  
+  const [sourceLoaded, setSourceLoaded] = useState(null)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => setSourceLoaded(src)
+  }, [src])
+
+  return sourceLoaded 
+}
+
 export const Portfolio = () => {
   const [tmcShouldShow, setTmcShouldShow] = useState(false);
   const [solarSystemShouldShow, setSolarSystemShouldShow] = useState(false);
@@ -238,6 +262,14 @@ export const Portfolio = () => {
   const [apiReduxModalShouldShow, setApiReduxModalShouldShow] = useState(false);
   const [garraModalShouldShow, setGarraModalShouldShow] = useState(false);
   const [plateletModalShouldShow, setPlateletModalShouldShow] = useState(false);
+
+  const loadedTmc = useProgressiveImage(tmc);
+  const loadedSolarSystem = useProgressiveImage(solarSystem);
+  const loadedPlateletCalcReact = useProgressiveImage(plateletCalcReact);
+  const loadedRobots = useProgressiveImage(robots);
+  const loadedApiRedux = useProgressiveImage(apiRedux);
+  const loadedGarra = useProgressiveImage(garra);
+  const loadedPlateletCalc = useProgressiveImage(plateletCalc);
 
   return (
     <>
@@ -249,37 +281,37 @@ export const Portfolio = () => {
         <Grid>
           <Project>
             <ProjectTitle>TMC Clone - React</ProjectTitle>
-            <ProjectImage src={tmc} />
+            <ProjectImage src={loadedTmc || tmcPlaceholder} />
             <ProjectButton onClick={() => setTmcShouldShow(!tmcShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>Solar System - HTML & CSS</ProjectTitle>
-            <ProjectImage src={solarSystem} />
+            <ProjectImage src={loadedSolarSystem || solarSystemPlaceholder} />
             <ProjectButton onClick={() => setSolarSystemShouldShow(!solarSystemShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>Platelet Calculator - React</ProjectTitle>
-            <ProjectImage src={plateletCalcReact} />
+            <ProjectImage src={loadedPlateletCalcReact || plateletCalcReactPlaceholder} />
             <ProjectButton onClick={() => setPlateletReactShouldShow(!plateletReactShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>Luxembourg Robots - MERN</ProjectTitle>
-            <ProjectImage src={robots} />
+            <ProjectImage src={loadedRobots || robotsPlaceholder} />
             <ProjectButton onClick={() => setRobotModalShouldShow(!robotModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>API Practice - React & Redux</ProjectTitle>
-            <ProjectImage src={apiRedux} />
+            <ProjectImage src={loadedApiRedux || apiReduxPlaceholder} />
             <ProjectButton onClick={() => setApiReduxModalShouldShow(!apiReduxModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>Garra Website - HTML & CSS</ProjectTitle>
-            <ProjectImage src={garra} />
+            <ProjectImage src={loadedGarra || garraPlaceholder} />
             <ProjectButton onClick={() => setGarraModalShouldShow(!garraModalShouldShow)}>discover</ProjectButton>
           </Project>
           <Project>
             <ProjectTitle>Platelet Calculator - HTML, CSS & JavaScript</ProjectTitle>
-            <ProjectImage src={plateletCalc} />
+            <ProjectImage src={loadedPlateletCalc || plateletCalcPlaceholder} />
             <ProjectButton onClick={() => setPlateletModalShouldShow(!garraModalShouldShow)}>discover</ProjectButton>
           </Project>
         </Grid>

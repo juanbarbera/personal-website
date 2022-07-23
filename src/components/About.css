@@ -1,12 +1,13 @@
 #welcome-section {
-  height: 80vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 5rem;
-  font-weight: 300;
-  margin-top: 10vh;
+  margin-top: 20vh;
+  padding-top: 10vh;
   cursor: default;
+  font-family: "Dosis", sans-serif;
 }
 
 #description-section {
@@ -23,6 +24,7 @@
   text-align: center;
   overflow: hidden;
   cursor: default;
+  font-family: "Dosis", sans-serif;
 }
 
 .descShows {
@@ -112,15 +114,21 @@
   text-align: center;
   font-size: 2.5em;
   margin-top: 10vh;
-  cursor: default;
+  cursor: default;  
+  font-family: "Dosis", sans-serif;
 }
+
+#stack-header {
+  font-weight: 700;
+}
+
 
 #top-button,
 #portfolio-link {
   color: white;
   text-decoration: none !important;
   display: inline-block;
-  font-family: "Bebas Neue", cursive;
+  
   font-size: 1.5em;
 }
 
@@ -137,6 +145,12 @@
 }
 
 @media screen and (max-width: 1025px) {
+  #welcome-section {
+    height: 80vh;
+    margin-top: 10vh;
+    padding-top: 0;
+  }
+
   #description-section {
     font-size: 3.5em;
     height: auto;

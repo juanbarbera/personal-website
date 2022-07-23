@@ -39,7 +39,7 @@ const NavLink = styled(Link)`
   align-items: center;
   transition: all 0.17s ease-out;
   font-weight: 700;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 1.5em;
   text-decoration: none;
   color: white;
@@ -63,7 +63,7 @@ const LogoNameWrapper = styled.span`
 const LogoName = styled.div`
   letter-spacing: 1.7px;
   font-weight: 700;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 1.5em;
   line-height: 1;
 `;
@@ -83,7 +83,7 @@ const NeonYellow = styled.span`
 const Website = styled.div`
   letter-spacing: 3px;
   font-weight: 300;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 0.7em;
 `;
 

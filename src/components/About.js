@@ -5,13 +5,6 @@ import { BottomNavigation } from './BottomNavigation';
 import ComputerIcon from '@mui/icons-material/Computer';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-// import apiRedux from '../assets/images/api-redux.jpg';
-// import garra from '../assets/images/garra.jpg';
-// import plateletCalc from '../assets/images/plateletCalc.jpg';
-// import robots from '../assets/images/robot-store-print.jpg';
-// import plateletCalcReact from '../assets/images/platelet-calc-react.jpg';
-
-
 import './About.css';
 
 const StackAndSkills = styled.div`
@@ -31,6 +24,9 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all .25s;
+
+
+  font-family: "Bebas Neue", sans-serif;
   @media (min-width: 750px) {
     font-size: 3.5em;
   }
@@ -46,11 +42,15 @@ const Contact = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
 `;
 
 const ContactInfo = styled.div`
   text-align: center;
   margin-top: 5vh;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
 `;
 
 const ContactInfoDetail = styled.div`
@@ -67,7 +67,7 @@ export const About = () => {
     <>
     <TopNavigation />
     <BottomNavigation />
-    <div id="welcome-section">Welcome.</div>
+    <div id="welcome-section">Welcome</div>
     <div id="description-section">
           <div id="description-text">
             I am a self-taught front-end developer specialized in React with a good understanding of back-end as well. I am passionate about technology, particularly software and mechanical engineering. I am independent but can also work well in group activities; I have experience with Redux, managing information between parent and child components naturally in multiple scenarios; and I base every piece of code I write on the foundations of the school of thought from the book "Clean Code" by Robert C. Martin.
@@ -76,12 +76,13 @@ export const About = () => {
       <div id="stack">
         <StackAndSkills>
         <ComputerIcon/> 
-        <div>Stack and Skills:</div>
+        <div id="stack-header">Stack and Skills:</div>
         </StackAndSkills>
           <ol>
             <div>HTML | CSS</div>
             <div>JavaScript | Typescript</div>            
             <div>React | Redux</div>
+            <div>Jest | Testing & Debugging</div>
             <div>MaterialUI | Bootstrap | Semantic UI</div>
             <div>React-Router | Axios | Swiper</div>
             <div>Node | Express | Mongoose</div>
@@ -95,7 +96,7 @@ export const About = () => {
       <ContactWrapper>
         <Contact>
           <AccountCircleIcon />
-          <div>Contact</div>
+          <div id="contact-header">Contact</div>
         </Contact>
         <ContactInfo>
           <ContactInfoDetail><div>Phone:</div> <div>+32 0470619039</div></ContactInfoDetail>
