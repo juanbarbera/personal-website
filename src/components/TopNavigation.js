@@ -92,8 +92,7 @@ export const TopNavigation = () => {
     <Background>
       <NavigationWrapper>
         <Icon>
-          <NavLink to="/" color="#099fff">About Me</NavLink>
-          
+          <NavLink to="/" color="#099fff">About Me</NavLink>          
         </Icon>
           <NavLink to="/" color="white">
             <Logo>

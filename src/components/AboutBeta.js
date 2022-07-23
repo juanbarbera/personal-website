@@ -1,8 +1,7 @@
-import { TopNavigation } from './TopNavigation'; 
-import { BottomNavigation } from './BottomNavigation'; 
-
 import styled, { keyframes } from 'styled-components';
 
+import { TopNavigation } from './TopNavigation'; 
+import { BottomNavigation } from './BottomNavigation'; 
 
 const Background = styled.section`
   height: 90vh;

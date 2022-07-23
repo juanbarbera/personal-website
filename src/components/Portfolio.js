@@ -21,9 +21,7 @@ import garraPlaceholder from '../assets/images/garra-placeholder.webp';
 import plateletCalcPlaceholder from '../assets/images/plateletCalc-placeholder.webp';
 
 const Background = styled.section`
-  background-color: white;
-
-  
+  background-color: white;  
   font-family: "Bebas Neue", sans-serif;
   @media (max-width: 1025px) {
     padding-bottom: 12vh;
@@ -120,7 +118,7 @@ const ProjectButton = styled(Button)`
   }
 `;
 
-// <Project>Background and <Project>Body
+// Common Modal components
 
 const ModalBackground = styled.div`
   display: ${props => props.open ? 'block' : 'none'};
@@ -155,8 +153,6 @@ const ModalBody = styled.div`
     margin: 10vh 25vw 10vh 25vw;
   }
 `;
-
-// Common Modal components
 
 const ModalTitle = styled.div`
   display: flex;

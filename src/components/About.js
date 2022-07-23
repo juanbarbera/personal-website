@@ -28,7 +28,7 @@ const ContactWrapper = styled.div`
 
   font-family: "Bebas Neue", sans-serif;
   @media (min-width: 750px) {
-    font-size: 3.5em;
+    font-size: 2.25em;
   }
   @media (min-width: 1025px) {
     font-size: 2.5em;
@@ -47,10 +47,13 @@ const Contact = styled.div`
 `;
 
 const ContactInfo = styled.div`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 5vh;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
+  overflow-wrap: break-word;
 `;
 
 const ContactInfoDetail = styled.div`
@@ -102,6 +105,7 @@ export const About = () => {
           <ContactInfoDetail><div>Phone:</div> <div>+32 0470619039</div></ContactInfoDetail>
           <ContactInfoDetail><div>Email:</div> <div>jbarberafilho@outlook.com</div></ContactInfoDetail>
           <ContactInfoDetail><div>Linkedin:</div> <div>/juanbarberafilho</div></ContactInfoDetail>
+          <ContactInfoDetail><div>Github:</div> <div>/juanbarbera</div></ContactInfoDetail>
         </ContactInfo>
       </ContactWrapper>
 
