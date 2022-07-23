@@ -316,7 +316,7 @@ export const Portfolio = () => {
 
     <ModalBackground open={tmcShouldShow} onClick={() => setTmcShouldShow(false)}>
       <ModalBody onClick={e => e.stopPropagation()}>
-        <ModalTitle>Solar System - HTML & CSS</ModalTitle>
+        <ModalTitle>TMC Clone - React</ModalTitle>
         <ModalImageAndDescription> 
           <Centralizer>
             <ModalImage src={tmc}/>

@@ -12,7 +12,7 @@ const StackAndSkills = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3.5vh;
+  margin-bottom: 2.5vh;
 `;
 
 const ContactWrapper = styled.div`
@@ -60,8 +60,18 @@ const ContactInfoDetail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   @media (min-width: 806px) {
     flex-direction: row;
+  }
+`;
+
+const ContactInfoDetailSpec = styled.div`
+  /* padding-left: 0; */
+  font-size: .8em;
+  padding: 10px 0 20px 0;
+  @media (min-width: 806px) {
+    padding: 0 0 0 15px;
   }
 `;
 
@@ -102,10 +112,10 @@ export const About = () => {
           <div id="contact-header">Contact</div>
         </Contact>
         <ContactInfo>
-          <ContactInfoDetail><div>Phone:</div> <div>+32 0470619039</div></ContactInfoDetail>
-          <ContactInfoDetail><div>Email:</div> <div>jbarberafilho@outlook.com</div></ContactInfoDetail>
-          <ContactInfoDetail><div>Linkedin:</div> <div>/juanbarberafilho</div></ContactInfoDetail>
-          <ContactInfoDetail><div>Github:</div> <div>/juanbarbera</div></ContactInfoDetail>
+          <ContactInfoDetail><div>Phone: </div><ContactInfoDetailSpec>+32 0470619039</ContactInfoDetailSpec></ContactInfoDetail>
+          <ContactInfoDetail><div>Email: </div><ContactInfoDetailSpec>jbarberafilho@outlook.com</ContactInfoDetailSpec></ContactInfoDetail>
+          <ContactInfoDetail><div>Linkedin: </div><ContactInfoDetailSpec>linkedin.com/in/juanbarberafilho</ContactInfoDetailSpec></ContactInfoDetail>
+          <ContactInfoDetail><div>GitHub: </div><ContactInfoDetailSpec>github.com/juanbarbera</ContactInfoDetailSpec></ContactInfoDetail>
         </ContactInfo>
       </ContactWrapper>
 

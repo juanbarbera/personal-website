@@ -152,13 +152,13 @@
   }
 
   #description-section {
-    font-size: 3.5em;
+    font-size: 2.25em;
     height: auto;
     margin-top: 15vh;
   }
 
   #stack {
-    font-size: 3.5em;
+    font-size: 2.25em;
     margin: 10vh 0 10vh 0;
   }
 }
