@@ -83,7 +83,7 @@ export const About = () => {
     <div id="welcome-section">Welcome</div>
     <div id="description-section">
           <div id="description-text">
-            I am a self-taught front-end developer specialized in React with a good understanding of back-end as well. I am passionate about technology, particularly software and mechanical engineering. I am independent but can also work well in group activities; I have experience with Redux, managing information between parent and child components naturally in multiple scenarios; and I base every piece of code I write on the foundations of the school of thought from the book "Clean Code" by Robert C. Martin.
+            I am a self-taught front-end developer specialized in React with a basic understanding of back-end as well. I am passionate about technology, particularly software and mechanical engineering. Also, I base the code I write on the foundations of the school of thought from the book "Clean Code" by Robert C. Martin. I love how powerful programming is, how much can be done just by essentially typing into a keyboard.
           </div>
       </div>      
       <div id="stack">

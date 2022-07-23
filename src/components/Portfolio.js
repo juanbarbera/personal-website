@@ -109,6 +109,10 @@ const ProjectButton = styled(Button)`
     background-color: black;
     color: white;
     z-index: 0;
+    :hover {
+        background-color: black;
+        color: white;
+      }
     @media (min-width: 1025px) {
       :hover {
         font-size: 1.3em;
@@ -229,7 +233,11 @@ const ModalButton = styled(Button)`
     color: white;
     width: 65%;
     transition: all .3s;
-    margin: ${props => props.repository ? '3% 0' : 'auto'};    
+    margin: ${props => props.repository ? '3% 0' : 'auto'}; 
+    :hover {
+      background-color: black;
+      color: white;
+      }   
     @media (min-width: 1025px) {
       width: 150px;
       :hover {
